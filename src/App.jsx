@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useFeedbackStore } from "./store";
 
 const Button = ({onClick, text}) => {
   return <button onClick={onClick}>{text}</button>;
