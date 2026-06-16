@@ -38,20 +38,14 @@ const Statistics = ({ good, neutral, bad }) => {
 };
 
 const App = () => {
-  const [good, setGood] = useState(0);
-  const [neutral, setNeutral] = useState(0);
-  const [bad, setBad] = useState(0);
-
-  const total = good + neutral + bad;
-  const mean = total === 0 ? 0 : total / 3;
-  const positive = total === 0 ? 0 : ((good / total) * 100).toFixed(1);
+  const { good, neutral, bad, incrementGood, incrementNeutral, incrementBad } = useFeedbackStore();
 
   return (
     <div>
       <h1>give feedback</h1>
-      <Button onClick={() => setGood(good + 1)} text="good" />
-      <Button onClick={() => setNeutral(neutral + 1)} text="neutral" />
-      <Button onClick={() => setBad(bad + 1)} text="bad" />
+      <Button onClick={incrementGood} text="good" />
+      <Button onClick={incrementNeutral} text="neutral" />
+      <Button onClick={incrementBad} text="bad" />
 
       <h1>statistics</h1>
 
@@ -59,9 +53,6 @@ const App = () => {
         good={good}
         neutral={neutral}
         bad={bad}
-        total={total}
-        mean={mean}
-        positive={positive}
       />
     </div>
   );
