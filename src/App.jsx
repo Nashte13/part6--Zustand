@@ -1,24 +1,28 @@
-import { useState } from "react";
 import { useFeedbackStore } from "./store";
 
 const Button = ({onClick, text}) => {
   return <button onClick={onClick}>{text}</button>;
 };
 
-const StatisticLine = ({text, value}) => {
-    return (
-        <tr>
-            <td>{text}</td>
-            <td>{value}</td>
-        </tr>
-    )
-}
+const StatisticLine = ({ text, value }) => {
+  return (
+    <tr>
+      <td>{text}</td>
+      <td>{value}</td>
+    </tr>
+  );
+};
 
 
-const Statistics = ({ good, neutral, bad, total, mean, positive }) => {
+const Statistics = ({ good, neutral, bad }) => {
+  const total = good + neutral + bad
+  const mean = total === 0 ? 0 : total / 3
+  const positive = total === 0 ? 0 : ((good / total) * 100).toFixed(1)
+
   if (total === 0) {
     return <p>No feedback given</p>;
   }
+
   return (
     <table>
         <tbody>
