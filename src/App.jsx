@@ -1,18 +1,5 @@
 import { useFeedbackStore } from "./store";
 
-const Button = ({onClick, text}) => {
-  return <button onClick={onClick}>{text}</button>;
-};
-
-const StatisticLine = ({ text, value }) => {
-  return (
-    <tr>
-      <td>{text}</td>
-      <td>{value}</td>
-    </tr>
-  );
-};
-
 
 const Statistics = ({ good, neutral, bad }) => {
   const total = good + neutral + bad
