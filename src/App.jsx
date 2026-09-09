@@ -1,5 +1,3 @@
-import { useFeedbackStore } from "./store";
-
 
 const App = () => {
   const { good, neutral, bad, incrementGood, incrementNeutral, incrementBad } = useFeedbackStore();
