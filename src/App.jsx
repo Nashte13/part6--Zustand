@@ -1,16 +1,16 @@
+import FeedbackButtons from './components/FeedbackButtons';
+import { useFeedbackStore } from './store';
 
 const App = () => {
-  const { good, neutral, bad, incrementGood, incrementNeutral, incrementBad } = useFeedbackStore();
+  const { good, neutral, bad } = useFeedbackStore();
 
   return (
     <div>
       <h1>give feedback</h1>
-      <Button onClick={incrementGood} text="good" />
-      <Button onClick={incrementNeutral} text="neutral" />
-      <Button onClick={incrementBad} text="bad" />
+      <FeedbackButtons />
+      
 
       <h1>statistics</h1>
-
       <Statistics
         good={good}
         neutral={neutral}
