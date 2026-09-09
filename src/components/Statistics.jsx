@@ -1,3 +1,5 @@
+import StatisticLine from "./StatisticLine";
+
 const Statistics = ({ good, neutral, bad }) => {
   const total = good + neutral + bad;
   const mean = total === 0 ? 0 : total / 3;
