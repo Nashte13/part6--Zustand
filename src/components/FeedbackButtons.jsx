@@ -1,4 +1,4 @@
-import { useFeedbackStore } from "./store";
+import { useFeedbackStore } from "../store";
 
 const FeedbackButtons = () => {
   const { incrementGood, incrementNeutral, incrementBad } = useFeedbackStore();
